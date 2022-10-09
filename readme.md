@@ -25,7 +25,7 @@ For more information, see the [WF3 Protocol](https://docs.google.com/document/d/
 
 #### 1. Raw dataset 
 Parameters of `918` reactions are listed in the [raw dataset](plumbing/csv/expver-3.0_1%251%251%251.csv).
-For each reaction in this dataset, only one type of `ammonium halide`/`inorganic halide`/`solvent`/`acid` is used.
+For each reaction in this dataset, only one unique `ammonium halide`/`inorganic halide`/`solvent`/`acid` is used.
 This csv file contains the following columns:
 - `identifier`: the identifier for a reaction
 - `fingerprint`: number of unique `ammonium halide`/`inorganic halide`/`solvent`/`acid`  used in this reaction
