@@ -59,8 +59,6 @@ if __name__ == '__main__':
                     if k.endswith("___inchikey"):
                         possible_inchikeys.add(v)
             possible_inchikeys = sorted(possible_inchikeys)
-            convex_hull = ConvexHull.keep_axes(possible_inchikeys)
-            convex_hull.df.drop_duplicates().to_csv(f"csv/convexhull_{group_key}.csv", index=False)
             export_hull = False
 
         df = pd.DataFrame.from_records(records)

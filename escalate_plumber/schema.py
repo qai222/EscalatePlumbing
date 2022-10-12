@@ -420,12 +420,6 @@ class SamplerConvexHull(MSONable):
         self._space = space
         self._df = df
 
-    def keep_axes(self, inchikeys: list[str]) -> SamplerConvexHull:
-        new_space = tuple(sorted([m for m in self.space if m.inchikey in inchikeys]))
-        new_columns = [m.inchikey for m in new_space]
-        assert len(new_space) == len(inchikeys)
-        return SamplerConvexHull(new_space, self.df[new_columns])
-
     @staticmethod
     def combine(sch1: SamplerConvexHull, sch2: SamplerConvexHull) -> SamplerConvexHull:
         new_space = []
