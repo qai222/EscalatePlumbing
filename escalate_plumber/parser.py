@@ -85,16 +85,6 @@ def get_reagent_table(reagent_record: dict, inventory: list[Material]):
         except (KeyError, AssertionError) as e:
             continue
 
-        try:
-            reagent_volume_prepare = reagent_record[reagent_volume_prepare]
-            reagent_volume_prepare_unit = reagent_record[reagent_volume_prepare_unit]
-            assert not pd.isna(reagent_volume_prepare) and reagent_volume_prepare > 1e-6 and not pd.isna(
-                reagent_volume_prepare_unit)
-        except (KeyError, AssertionError) as e:
-            reagent_volume_prepare = None
-            reagent_volume_prepare_unit = None
-            logger.warning(f"reagent preparation volume is missing for reagent index=={i}")
-
         for j in range(_max_num_rm):
             reagent_chemical_inchikey = f"_raw_reagent_{i}_chemicals_{j}_inchikey"
             reagent_chemical_amount = f"_raw_reagent_{i}_chemicals_{j}_actual_amount"
@@ -128,7 +118,6 @@ def get_reagent_table(reagent_record: dict, inventory: list[Material]):
         reagent = Reagent(
             reagent_material_table=rm_dict,
             volume_added=reagent_volume * 1e-6,  # uL -> L
-            volume_prepare=reagent_volume_prepare,
         )
         reagent_dict[i] = reagent
     return reagent_dict
