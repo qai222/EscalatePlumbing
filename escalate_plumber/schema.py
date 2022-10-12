@@ -4,6 +4,7 @@ import itertools
 import re
 import typing
 
+import numpy as np
 import pandas as pd
 from loguru import logger
 from monty.json import MSONable
@@ -44,6 +45,10 @@ class Material(MSONable):
 
     def __gt__(self, other: Material):
         return self.inchikey.__gt__(other.inchikey)
+
+    @property
+    def pure_molarity(self):
+        return 1e3 * self.density / self.mw
 
     @staticmethod
     def select_from(inchikey: str, mat_list: list[Material]):
@@ -92,7 +97,17 @@ class ReagentMaterial(MSONable):
         assert self.amount_unit.lower() in ("milliliter", "gram"), f"unconventional amount unit: {self.amount_unit}"
 
     @property
-    def mol(self):
+    def volume(self) -> float:  # in Liter
+        if self.amount_unit.lower() == "gram":
+            v = 1e-3 * self.amount / self.material.density
+        elif self.amount_unit.lower() == "milliliter":
+            v = 1e-3 * self.amount
+        else:
+            raise ValueError(f"unknown amount unit: {self.amount_unit}")
+        return v
+
+    @property
+    def mol(self) -> float:
         if self.amount_unit.lower() == "gram":
             gram = self.amount
         elif self.amount_unit.lower() == "milliliter":
@@ -108,17 +123,18 @@ class ReagentMaterial(MSONable):
 class Reagent(MSONable):
 
     def __init__(self, reagent_material_table: dict[int, ReagentMaterial],
-                 volume_added: float, volume_prepare: float = None,
+                 volume_added: float, volume_sum: float = None,
                  molarity_table: dict[str, float] = None):
         """
         describing a reagent added directly to the reaction, can be a mixture
 
+        Joshua: measured volume in `instruction` maybe grossly inaccurate, better use volume sum
+
         :param reagent_material_table:
         :param volume_added: in Liter
-        :param volume_prepare: in Liter
         :param molarity_table:
         """
-        self.volume_prepare = volume_prepare
+        self._volume_sum = volume_sum
         self.volume_added = volume_added
         self.reagent_material_table = reagent_material_table
         self._molarity_table = molarity_table
@@ -128,24 +144,42 @@ class Reagent(MSONable):
         ), "duplicate materials in the reagent!"
 
     @property
-    def volume_prepare_measured(self):
-        return isinstance(self.volume_prepare, float) and self.volume_prepare > 1e-6
+    def volume_sum(self):
+        """ Joshua: volume is always additive, so it can be calculated from reagent materials """
+        vol_sum = 0
+        for c in self.reagent_material_table.values():
+            vol_sum += c.volume
+        return vol_sum
 
     @property
-    def molarity_table(self) -> typing.Union[dict[str, float], None]:
-        if not self.volume_prepare_measured:
-            return None
+    def molarity_table(self) -> dict[str, float]:
         d = dict()
         for ic, c in self.reagent_material_table.items():
-            d[c.material.inchikey] = c.mol / self.volume_prepare
+            d[c.material.inchikey] = c.mol / self.volume_sum
         return d
 
     def __repr__(self):
         return "\n".join(
             [f"{self.__class__.__name__}", f"\t\tadded volume {self.volume_added} Liter:",
-             f"\t\tpreparation volume: {self.volume_prepare} Liter"] +
+             f"\t\tstock solution volume from volume sum: {self.volume_sum} Liter"
+             ] +
             [f"\t\t i=={i}: {c}" for i, c in self.reagent_material_table.items()]
         )
+
+    def __eq__(self, other: Reagent):
+        if not isinstance(other, Reagent):
+            return False
+        if len(self.molarity_table) != len(other.molarity_table):
+            return False
+        if set(self.molarity_table.keys()) != set(other.molarity_table.keys()):
+            return False
+        for k in self.molarity_table.keys():
+            if abs(self.molarity_table[k] - other.molarity_table[k]) > 1e-5:
+                return False
+        return True
+
+    def __hash__(self):
+        return hash(tuple(sorted([(k, round(v, 5)) for k, v in self.molarity_table.items()])))
 
 
 class Reaction(MSONable):
@@ -177,6 +211,10 @@ class Reaction(MSONable):
             properties = dict()
         self.properties = properties
         self.raw_ = raw_
+
+    @property
+    def reagent_set(self):
+        return set([r for r in self.reagent_table.values()])
 
     @property
     def experiment_header(self):
@@ -211,10 +249,6 @@ class Reaction(MSONable):
     @property
     def inchikeys(self):
         return sorted(self.inchikey_to_material.keys())
-
-    @property
-    def has_reagent_preparation_volume(self):
-        return all(r.volume_prepare_measured for r in self.reagent_table.values())
 
     @property
     def is_wf3(self) -> bool:
@@ -302,7 +336,7 @@ class WF3Data(MSONable):
         # This molarity times the volume of reagent_i actually added to the system is the mol amount of chemical_j.
 
         use_mmol_data = "mmol_data" in reaction.properties
-        use_reagent_data = reaction.has_reagent_preparation_volume
+        use_reagent_data = True
         assert use_mmol_data
 
         category_molarity_table_mmol_data = {cat: {} for cat in EscalateCategories}
@@ -352,7 +386,12 @@ class WF3Data(MSONable):
 
                 logger.info(f"molarity of {inchikey} ({mat.name}) from reagent_data: {molarity_from_reagent} M")
                 logger.info(f"molarity of {inchikey} ({mat.name}) from mmol_data: {molarity_from_mmol} M")
-                logger.info(f"the difference is {molarity_from_reagent - molarity_from_mmol} M")
+                adiff = abs(molarity_from_reagent - molarity_from_mmol)
+                rdiff = adiff / molarity_from_reagent
+                if rdiff < 1e-3:
+                    logger.info(f"the difference is {adiff} M {rdiff}%")
+                else:
+                    logger.critical(f"the difference is {adiff} M {rdiff}% ??????")
                 # this difference may come from the fact that `mmol_data` was (maybe) calculated using nominal amount
 
         del category_molarity_table_mmol_data[
@@ -374,6 +413,84 @@ class WF3Data(MSONable):
             antisolvent_identity=reagent_material_antisolvent.material.inchikey,
             **category_molarity_table_mmol_data,
         )
+
+
+class SamplerConvexHull(MSONable):
+    def __init__(self, space: typing.Tuple[Material, ...], df: pd.DataFrame):
+        self._space = space
+        self._df = df
+
+    def keep_axes(self, inchikeys: list[str]) -> SamplerConvexHull:
+        new_space = tuple(sorted([m for m in self.space if m.inchikey in inchikeys]))
+        new_columns = [m.inchikey for m in new_space]
+        assert len(new_space) == len(inchikeys)
+        return SamplerConvexHull(new_space, self.df[new_columns])
+
+    @staticmethod
+    def combine(sch1: SamplerConvexHull, sch2: SamplerConvexHull) -> SamplerConvexHull:
+        new_space = []
+        for mat in sch1.space:
+            new_space.append(mat)
+        for mat in sch2.space:
+            new_space.append(mat)
+        new_space = tuple(sorted(set(new_space)))
+        records = sch1.df.to_dict(orient='records') + sch2.df.to_dict(orient='records')
+        new_df = pd.DataFrame.from_records(records, columns=[m.inchikey for m in new_space])
+        new_df.fillna(value=0.0, inplace=True)
+        new_df.drop_duplicates(inplace=True, ignore_index=True)
+        return SamplerConvexHull(new_space, new_df)
+
+    @property
+    def space(self):
+        assert len(self._space) > 0
+        return tuple(sorted(self._space))
+
+    @property
+    def df(self):
+        cols = [m.inchikey for m in self.space]
+        assert cols == [c for c in self._df.columns]
+        return self._df.sort_values(by=cols, axis=0)
+
+    def __eq__(self, other: SamplerConvexHull):
+        if len(self.space) != len(other.space):
+            return False
+        if any(self.space[i] != other.space[i] for i in range(len(self.space))):
+            return False
+        if self.df.shape != other.df.shape:
+            return False
+        if not np.allclose(self.df.values, other.df.values):
+            return False
+        return True
+
+    def __repr__(self):
+        s = self.__class__.__name__
+        s += f"\n# of axes: {len(self.space)}"
+        s += f"\naxes:"
+        for mat in self.space:
+            s += f"\n\t{mat.name} {mat.inchikey}"
+        s += "\n"
+        s += self.df.__repr__()
+        return s
+
+    @classmethod
+    def from_reagent_set(cls, reagent_set: set[Reagent]):
+        concentration_space = set()
+        for r in reagent_set:
+            for rmat in r.reagent_material_table.values():
+                concentration_space.add(rmat.material)
+        concentration_space = tuple(sorted(concentration_space))
+        points = []
+        for r in reagent_set:
+            v = [0., ] * len(concentration_space)
+            for iax, ax in enumerate(concentration_space):
+                try:
+                    v[iax] = r.molarity_table[ax.inchikey]
+                except KeyError:
+                    v[iax] = 0.
+            assert len(v) > 0 and any(vv > 1e-7 for vv in v)
+            points.append(v)
+        df = pd.DataFrame(points, columns=[m.inchikey for m in concentration_space])
+        return cls(concentration_space, df)
 
 
 def group_reactions(reactions: typing.Union[list[Reaction], list[WF3Data]], key_function: typing.Callable):
