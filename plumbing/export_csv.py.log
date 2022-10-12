@@ -32,3 +32,339 @@
 2022-09-22 01:49:47.584 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__refractivity with 8.15
 2022-09-22 01:49:47.585 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__solventmolecularweight with 46.025
 2022-09-22 01:49:47.585 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 13:05:56.802 | WARNING  | __main__:<module>:45 - >>> Export with features: False
+2022-10-12 13:05:56.909 | INFO     | __main__:<module>:66 - fill na in inorganic___0___molarity with zeros
+2022-10-12 13:05:56.910 | INFO     | __main__:<module>:66 - fill na in acid___0___molarity with zeros
+2022-10-12 13:05:56.911 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 13:05:56.912 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 13:05:56.912 | INFO     | __main__:<module>:69 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 13:05:56.913 | INFO     | __main__:<module>:69 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 13:05:56.913 | INFO     | __main__:<module>:69 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 13:05:56.914 | INFO     | __main__:<module>:69 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 13:05:56.990 | WARNING  | __main__:<module>:45 - >>> Export with features: True
+2022-10-12 13:05:57.093 | INFO     | __main__:<module>:66 - fill na in inorganic___0___molarity with zeros
+2022-10-12 13:05:57.094 | INFO     | __main__:<module>:66 - fill na in acid___0___molarity with zeros
+2022-10-12 13:05:57.094 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 13:05:57.095 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 13:05:57.095 | INFO     | __main__:<module>:69 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 13:05:57.096 | INFO     | __main__:<module>:69 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 13:05:57.096 | INFO     | __main__:<module>:69 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 13:05:57.097 | INFO     | __main__:<module>:69 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 13:05:57.097 | INFO     | __main__:<module>:69 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 13:05:57.097 | INFO     | __main__:<module>:69 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 13:05:57.098 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 13:05:57.098 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 13:05:57.098 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 13:05:57.099 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 13:05:57.099 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 13:05:57.099 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 13:05:57.100 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 13:05:57.100 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 13:05:57.100 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 13:05:57.101 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 13:05:57.101 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 13:05:57.101 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 13:05:57.102 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 13:05:57.102 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:07:56.534 | WARNING  | __main__:<module>:45 - >>> Export with features: False
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:66 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:66 - fill na in acid___0___molarity with zeros
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:07:56.596 | INFO     | __main__:<module>:69 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:07:56.612 | WARNING  | __main__:<module>:45 - >>> Export with features: True
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:66 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:66 - fill na in acid___0___molarity with zeros
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:07:56.705 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:07:56.721 | INFO     | __main__:<module>:69 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:23:51.831 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:24:34.138 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:24:53.771 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:24:53.846 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:24:53.862 | WARNING  | __main__:<module>:50 - >>> Export with features: True
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:24:53.972 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:24:53.988 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:24:53.988 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:28:04.628 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:28:04.706 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:28:04.722 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:28:04.737 | WARNING  | __main__:<module>:50 - >>> Export with features: True
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:28:04.831 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:28:04.846 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:28:04.847 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:28:04.847 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:28:04.848 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:28:04.848 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:28:04.848 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:28:04.849 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:28:04.849 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:28:04.850 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:28:04.850 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:28:04.850 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:28:04.851 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:28:04.851 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:28:04.851 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:28:04.852 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:28:04.852 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:28:04.852 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:28:04.853 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:29:31.799 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:29:31.886 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:29:31.916 | WARNING  | __main__:<module>:50 - >>> Export with features: True
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:29:32.011 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:29:32.027 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:31:01.378 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:31:01.456 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:31:01.471 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:31:01.487 | WARNING  | __main__:<module>:50 - >>> Export with features: True
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:31:01.582 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:31:01.597 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:32:06.127 | WARNING  | __main__:<module>:50 - >>> Export with features: False
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:32:06.221 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:32:06.237 | WARNING  | __main__:<module>:50 - >>> Export with features: True
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:84 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:84 - fill na in acid___0___molarity with zeros
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:32:06.346 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:32:06.362 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:32:06.362 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:32:06.362 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:32:06.363 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:32:06.363 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:32:06.363 | INFO     | __main__:<module>:87 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:33:00.094 | WARNING  | __main__:<module>:51 - >>> Export with features: False
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:85 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:85 - fill na in acid___0___molarity with zeros
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:33:00.176 | INFO     | __main__:<module>:88 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:33:00.208 | WARNING  | __main__:<module>:51 - >>> Export with features: True
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:85 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:85 - fill na in acid___0___molarity with zeros
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:33:00.315 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:33:00.330 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:33:00.330 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__vanderwaalsvolume with 39.21
+2022-10-12 14:33:33.862 | WARNING  | __main__:<module>:51 - >>> Export with features: False
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:85 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:85 - fill na in acid___0___molarity with zeros
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:88 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:88 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:33:33.956 | INFO     | __main__:<module>:88 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:33:33.972 | INFO     | __main__:<module>:88 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:33:33.972 | INFO     | __main__:<module>:88 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:33:33.972 | INFO     | __main__:<module>:88 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:33:33.988 | WARNING  | __main__:<module>:51 - >>> Export with features: True
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:85 - fill na in inorganic___0___molarity with zeros
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:85 - fill na in acid___0___molarity with zeros
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchikey with RQQRAHKHDFPBMC-UHFFFAOYSA-L
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0___inchi with InChI=1S/2HI.Pb/h2*1H;/q;;+2/p-2
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0___chemname with Lead Diiodide
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0___molarity_max with 13.36196611787163
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0____feat__fr_halogen with 2.0
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in inorganic___0____feat__inorganicmolecularweight with 461.0
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in acid___0___inchikey with BDAGIHXWWSANSR-UHFFFAOYSA-N
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in acid___0___inchi with InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in acid___0___chemname with Formic Acid
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in acid___0___molarity_max with 26.50445361720617
+2022-10-12 14:33:34.081 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__asavdwp with 65.19
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__avgpol with 3.37
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hacceptorcount with 2.0
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_volume_amount with 37.8
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltad_amount with 14.3
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltah_amount with 16.6
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltap_amount with 11.9
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hansentriple_deltat_amount with 25.0
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__hdonorcount with 1.0
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__maximalprojectionsize with 3.41
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__minimalprojectionsize with 5.19
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__refractivity with 8.15
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__solventmolecularweight with 46.025
+2022-10-12 14:33:34.096 | INFO     | __main__:<module>:88 - fill na in acid___0____feat__vanderwaalsvolume with 39.21

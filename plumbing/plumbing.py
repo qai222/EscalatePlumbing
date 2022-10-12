@@ -1,8 +1,10 @@
 import copy
+from collections import defaultdict
 
 from loguru import logger
 
-from escalate_plumber import Material, collect_reactions, WF3Data, json_dump, group_reactions, Reaction
+from escalate_plumber import Material, collect_reactions, WF3Data, json_dump, group_reactions, Reaction, \
+    SamplerConvexHull
 
 logger.add(f"{__file__}.log", level="DEBUG")
 
@@ -99,14 +101,15 @@ if __name__ == '__main__':
     #   [based on the header, we may be able to find experiment specifications in the `Science` folder]
     # - the fingerprint of a reaction comes from the number of unique organic/inorganic/solvent/acid chemicals
     #   two header groups are combined if their representative reactions share the same fingerprint
-    GroupDict = dict()
+    GroupDict = defaultdict(list)
+    ConvexHull = None
     for expver, expver_group in group_reactions(list(ReactionsValid.values()),
                                                 key_function=lambda x: x.experiment_version).items():
         logger.info(f"expver == {expver}: # of reactions == {len(expver_group)}")
         header_to_group = group_reactions(expver_group, key_function=lambda x: x.experiment_header)
         for header, header_group in header_to_group.items():
             logger.info(f"\theader == {header}: # of reactions == {len(header_group)}")
-            # a group is represented by the reaction with most `category_x`
+            # a header group is represented by the reaction with most `category_x`
             representative_reaction = sorted(
                 header_group, key=lambda x: len(x.properties["category_x_to_inchikey"].keys()), reverse=True
             )[0]
@@ -125,12 +128,27 @@ if __name__ == '__main__':
 
             wf3data = WF3Data.from_reaction(representative_reaction)
 
-            group_key = "expver-{}_{}".format(expver, wf3data.fingerprint)
-            try:
-                GroupDict[group_key] += [r.identifier for r in header_group]
-            except KeyError:
-                GroupDict[group_key] = [r.identifier for r in header_group]
+            reagent_set = set()
+            for r in header_group:
+                reagent_set_except_antisolvent = set(
+                    [
+                        reagent for reagent in r.reagent_set if not sorted(
+                        reagent.molarity_table.keys()
+                    )[0] == wf3data.antisolvent_identity
+                    ]
+                )
+                reagent_set = reagent_set.union(reagent_set_except_antisolvent)
+            sch = SamplerConvexHull.from_reagent_set(reagent_set)
 
+            if ConvexHull is None:
+                ConvexHull = sch
+            else:
+                ConvexHull = SamplerConvexHull.combine(ConvexHull, sch)
+
+            group_key = "expver-{}_{}".format(expver, wf3data.fingerprint)
+            GroupDict[group_key] += [r.identifier for r in header_group]
+
+    assert ConvexHull is not None
     ###########################
     # CONVERT REACTIONS TO DATA
     ###########################
@@ -145,5 +163,6 @@ if __name__ == '__main__':
         "FeatureDict": FeatureDict,
         "WF3Entries": WF3Entries,
         "MaterialInventory": MaterialInventory,
+        "ConvexHull": ConvexHull,
     }
     json_dump(PlumbingData, "PlumbingData.json.gz", gz=True)

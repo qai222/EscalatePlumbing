@@ -2,7 +2,7 @@ import pandas as pd
 from loguru import logger
 logger.add(f"{__file__}.log", level="DEBUG")
 
-from escalate_plumber import json_load, WF3Data, Material, EscalateCategories
+from escalate_plumber import json_load, WF3Data, Material, EscalateCategories, Reaction, SamplerConvexHull
 
 PlumbingData = json_load("PlumbingData.json.gz")
 ReactionsValid = PlumbingData["ReactionsValid"]
@@ -10,6 +10,7 @@ GroupDict = PlumbingData["GroupDict"]
 FeatureDict = PlumbingData["FeatureDict"]
 WF3Entries = PlumbingData["WF3Entries"]
 MaterialInventory = PlumbingData["MaterialInventory"]
+ConvexHull = PlumbingData["ConvexHull"]
 
 _useless_features = ["_feat__index", ]
 
@@ -29,6 +30,8 @@ def wf3data_to_record(wf3d: WF3Data, featurize=True):
                 record["{}___inchi".format(chem_index)] = mat.inchi
                 record["{}___chemname".format(chem_index)] = mat.name
                 record["{}___molarity".format(chem_index)] = molarity
+                record["{}___molarity_max".format(chem_index)] = mat.pure_molarity
+                assert molarity <= mat.pure_molarity
                 if featurize:
                     for featname, featval in FeatureDict[inchikey].items():
                         if featname not in _useless_features:
@@ -41,9 +44,25 @@ def wf3data_to_record(wf3d: WF3Data, featurize=True):
 if __name__ == '__main__':
     group_key = "expver-3.0_1%1%1%1"
     group_identifiers = GroupDict[group_key]
+
+    export_hull = True
+
     for featurize in (False, True):
         logger.warning(f">>> Export with features: {featurize}")
         records = [wf3data_to_record(WF3Entries[i], featurize=featurize) for i in group_identifiers]
+
+        if export_hull:
+            ConvexHull.df.drop_duplicates().to_csv("csv/convexhull.csv", index=False)
+            possible_inchikeys = set()
+            for r in records:
+                for k, v in r.items():
+                    if k.endswith("___inchikey"):
+                        possible_inchikeys.add(v)
+            possible_inchikeys = sorted(possible_inchikeys)
+            convex_hull = ConvexHull.keep_axes(possible_inchikeys)
+            convex_hull.df.drop_duplicates().to_csv(f"csv/convexhull_{group_key}.csv", index=False)
+            export_hull = False
+
         df = pd.DataFrame.from_records(records)
 
         # an ugly padding scheme for `1%1%1%1` reactions
