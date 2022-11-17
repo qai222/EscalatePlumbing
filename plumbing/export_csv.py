@@ -1,8 +1,9 @@
 import pandas as pd
 from loguru import logger
+
 logger.add(f"{__file__}.log", level="DEBUG")
 
-from escalate_plumber import json_load, WF3Data, Material, EscalateCategories, Reaction, SamplerConvexHull
+from escalate_plumber import json_load, WF3Data, EscalateCategories
 
 PlumbingData = json_load("PlumbingData.json.gz")
 ReactionsValid = PlumbingData["ReactionsValid"]
@@ -12,34 +13,9 @@ WF3Entries = PlumbingData["WF3Entries"]
 MaterialInventory = PlumbingData["MaterialInventory"]
 ConvexHull = PlumbingData["ConvexHull"]
 
+WF3Entries: list[WF3Data]
+
 _useless_features = ["_feat__index", ]
-
-
-def wf3data_to_record(wf3d: WF3Data, featurize=True):
-    record = dict()
-    for k, v in wf3d.as_dict().items():
-        if k.startswith("@"):
-            continue
-        if isinstance(v, dict):
-            cat = k
-            for i_inchikey, inchikey in enumerate(sorted(v.keys())):
-                molarity = v[inchikey]
-                mat = Material.select_from(inchikey, MaterialInventory)
-                chem_index = "{}___{}".format(cat, i_inchikey)
-                record["{}___inchikey".format(chem_index)] = inchikey
-                record["{}___inchi".format(chem_index)] = mat.inchi
-                record["{}___chemname".format(chem_index)] = mat.name
-                record["{}___molarity".format(chem_index)] = molarity
-                record["{}___molarity_max".format(chem_index)] = mat.pure_molarity
-                assert molarity <= mat.pure_molarity
-                if featurize:
-                    for featname, featval in FeatureDict[inchikey].items():
-                        if featname not in _useless_features:
-                            record["{}___{}".format(chem_index, featname)] = featval
-        else:
-            record[k] = v
-    return record
-
 
 if __name__ == '__main__':
     group_key = "expver-3.0_1%1%1%1"
@@ -49,7 +25,18 @@ if __name__ == '__main__':
 
     for featurize in (False, True):
         logger.warning(f">>> Export with features: {featurize}")
-        records = [wf3data_to_record(WF3Entries[i], featurize=featurize) for i in group_identifiers]
+        if featurize:
+            feat_dict = FeatureDict
+        else:
+            feat_dict = None
+        records = [
+            WF3Entries[i].as_olympus_record(
+                mat_inventory=MaterialInventory,
+                feat_dict=feat_dict,
+                useless_features=("_feat__index",)
+            )
+            for i in group_identifiers
+        ]
 
         if export_hull:
             ConvexHull.df.drop_duplicates().to_csv("csv/convexhull.csv", index=False)

@@ -17,7 +17,7 @@ from monty.json import MontyEncoder, MontyDecoder
 from pandas._typing import FilePath
 
 from .schema import Material, Reaction, Reagent, ReagentMaterial, group_reactions, WF3Data, \
-    EscalateCategories, SamplerConvexHull
+    EscalateCategories, SamplerConvexHull, sort_and_group
 from .parser import collect_reactions, classify_column, is_column_useless, record_to_reaction
 
 

@@ -257,6 +257,27 @@ class Reaction(MSONable):
     def is_wf3(self) -> bool:
         return self.experiment_version.startswith("3")
 
+    def export_reagent_records(self, include_reaction_info=False):
+        records = []
+        for ireagent, reagent in self.reagent_table.items():
+            record = {
+                "chemsys": "__".join(
+                    sorted([rm.material.name.replace(" ", "_") for rm in reagent.reagent_material_table.values()])),
+            }
+            # info of each chemical
+            for rm in reagent.reagent_material_table.values():
+                record[f'molarity__{rm.material.name} (M)'] = rm.mol / reagent.volume_sum
+                record[f'prepare__{rm.material.name}'] = f"{rm.amount} {rm.amount_unit}"
+            record[f'prepare_FinalVolume (mL)'] = reagent.volume_sum * 1e3
+
+            if include_reaction_info:
+                # which reaction it belongs to
+                record["reagent_index"] = ireagent
+                record["reagent_DispensedVolume (mL)"] = reagent.volume_added * 1e3
+                record["reaction_id"] = self.identifier
+            records.append(record)
+        return records
+
 
 class WF3Data(MSONable):
 
@@ -417,6 +438,36 @@ class WF3Data(MSONable):
             **category_molarity_table_mmol_data,
         )
 
+    def as_olympus_record(
+            self,
+            mat_inventory: list[Material],
+            feat_dict: dict = None,
+            useless_features=("_feat__index",),
+    ):
+        record = dict()
+        for k, v in self.as_dict().items():
+            if k.startswith("@"):
+                continue
+            if isinstance(v, dict):
+                cat = k
+                for i_inchikey, inchikey in enumerate(sorted(v.keys())):
+                    molarity = v[inchikey]
+                    mat = Material.select_from(inchikey, mat_inventory)
+                    chem_index = "{}___{}".format(cat, i_inchikey)
+                    record["{}___inchikey".format(chem_index)] = inchikey
+                    record["{}___inchi".format(chem_index)] = mat.inchi
+                    record["{}___chemname".format(chem_index)] = mat.name
+                    record["{}___molarity".format(chem_index)] = molarity
+                    record["{}___molarity_max".format(chem_index)] = mat.pure_molarity
+                    assert molarity <= mat.pure_molarity
+                    if feat_dict:
+                        for featname, featval in feat_dict[inchikey].items():
+                            if featname not in useless_features:
+                                record["{}___{}".format(chem_index, featname)] = featval
+            else:
+                record[k] = v
+        return record
+
 
 class SamplerConvexHull(MSONable):
     def __init__(self, space: typing.Tuple[Material, ...], df: pd.DataFrame):
@@ -490,11 +541,15 @@ class SamplerConvexHull(MSONable):
         return cls(concentration_space, df)
 
 
-def group_reactions(reactions: typing.Union[list[Reaction], list[WF3Data]], key_function: typing.Callable):
+def sort_and_group(lst, key_function: typing.Callable):
     groups = []
     unique_keys = []
-    data = sorted(reactions, key=key_function)
+    data = sorted(lst, key=key_function)
     for k, g in itertools.groupby(data, key_function):
         groups.append(list(g))
         unique_keys.append(k)
     return dict(zip(unique_keys, groups))
+
+
+def group_reactions(reactions: typing.Union[list[Reaction], list[WF3Data]], key_function: typing.Callable):
+    return sort_and_group(reactions, key_function)
